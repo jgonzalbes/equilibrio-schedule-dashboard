@@ -1,5 +1,5 @@
 <meta charset="utf-8">
-<title>Turnos Equilibrio</title>
+<title>Turnos de Cafetería</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&display=swap">
@@ -32,8 +32,6 @@
   --sombra:0 1px 2px rgba(26,21,18,.06), 0 6px 20px -12px rgba(26,21,18,.28);
   --sombra-alta:0 18px 50px -18px rgba(26,21,18,.45);
   --r:10px;
-  --disco:#12100E;
-  --disco-e:#EFE6D6;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
@@ -62,8 +60,6 @@
     --barra-linea:#332A23;
     --sombra:0 1px 2px rgba(0,0,0,.4), 0 6px 20px -12px rgba(0,0,0,.7);
     --sombra-alta:0 18px 50px -18px rgba(0,0,0,.85);
-    --disco:#0B0A09;
-    --disco-e:#EFE6D6;
   }
 }
 :root[data-theme="dark"]{
@@ -92,8 +88,6 @@
   --barra-linea:#332A23;
   --sombra:0 1px 2px rgba(0,0,0,.4), 0 6px 20px -12px rgba(0,0,0,.7);
   --sombra-alta:0 18px 50px -18px rgba(0,0,0,.85);
-  --disco:#0B0A09;
-  --disco-e:#EFE6D6;
 }
 
 *{box-sizing:border-box}
@@ -129,7 +123,10 @@ h1,h2,h3{margin:0;font-family:"Fraunces",Georgia,serif;font-weight:600;text-wrap
   display:flex;align-items:center;gap:22px;flex-wrap:wrap;
 }
 .marca{display:flex;align-items:center;gap:11px;margin-right:2px}
-.marca svg{display:block;width:34px;height:34px;border-radius:50%}
+.marca img{
+  display:block;width:34px;height:34px;border-radius:8px;
+  background:#FFFFFF;padding:3px;object-fit:contain;
+}
 .marca-txt{display:flex;flex-direction:column;line-height:1.15}
 .marca-txt b{
   font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:16.5px;
@@ -647,15 +644,10 @@ h1,h2,h3{margin:0;font-family:"Fraunces",Georgia,serif;font-weight:600;text-wrap
 <div class="barra">
   <div class="barra-in">
     <div class="marca">
-      <svg viewBox="0 0 40 40" aria-hidden="true">
-        <circle cx="20" cy="20" r="20" fill="var(--disco)"></circle>
-        <text x="20.5" y="21" text-anchor="middle" dominant-baseline="central"
-              font-family="Fraunces,Georgia,serif" font-style="italic" font-weight="500"
-              font-size="27" fill="var(--disco-e)">e</text>
-      </svg>
+      <img src="assets/icon.png" alt="Miami AI Solutions" width="34" height="34">
       <span class="marca-txt">
-        <b>Equilibrio</b>
-        <span>Coffee House · Weston</span>
+        <b>Local Coffee Shop</b>
+        <span>Demo · Miami AI Solutions</span>
       </span>
     </div>
     <div class="barra-sep" aria-hidden="true"></div>
@@ -833,7 +825,7 @@ h1,h2,h3{margin:0;font-family:"Fraunces",Georgia,serif;font-weight:600;text-wrap
 
 <script>
 /* =========================================================
-   Datos de ejemplo — Equilibrio Coffee House, Weston FL
+   Datos de ejemplo — cafetería genérica. Pieza de portfolio.
    Todo ficticio. Sin backend: el estado vive en memoria.
    ========================================================= */
 
@@ -876,13 +868,13 @@ let SOLICITUDES = [
   {
     id:"s2", de:"luc", dia:4, turno:"apertura",
     con:"tom", turnoCon:"cierre", diaCon:4,
-    motivo:"Viaje familiar a Orlando, salimos el viernes temprano.",
+    motivo:"Viaje familiar, salimos el viernes temprano.",
     cuando:"ayer", estado:"pendiente"
   },
   {
     id:"s3", de:"val", dia:5, turno:"intermedio",
     con:null, turnoCon:null, diaCon:5,
-    motivo:"Curso de latte art en Miami. Abierto a quien pueda tomarlo.",
+    motivo:"Curso de latte art, me lo confirmaron esta semana. Abierto a quien pueda tomarlo.",
     cuando:"hace 5 horas", estado:"pendiente"
   },
   {
